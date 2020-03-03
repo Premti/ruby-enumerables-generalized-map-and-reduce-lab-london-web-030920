@@ -8,6 +8,12 @@ def map(array)
   new_array
 end
 
-def reduce(array)
-  
+def reduce(array, starting_value = nil)
+  total = 0 
+  i = 0 
+  while i < array.length do 
+    total += array[i]
+    i += 1
+ end
+ total
 end
