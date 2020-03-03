@@ -9,11 +9,16 @@ def map(array)
 end
 
 def reduce(array, starting_value = nil)
-  total = 0 
-  i = 0 
-  while i < array.length do 
-    total += array[i]
-    i += 1
+    if starting_value
+      starting_value = sum
+      i = 0 
+    else 
+      sum = array[0]
+      i = 0
+    end
+    while i < array.length 
+      sum =  yield(sum, array[i])
+      i += 1 
  end
- total
+ sum
 end
